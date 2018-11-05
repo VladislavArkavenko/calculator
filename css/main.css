@@ -1,0 +1,84 @@
+body {
+	background: #000 url(../img/bg.png) no-repeat center top / cover;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	color: #f9f9f9;
+}
+
+.container{
+	width:378px;
+	height: 408px;
+	margin-top: -204px;
+	background-color: #cefc75;
+	border-radius: 7px;
+	position: absolute;	
+	top:50%;
+}
+
+.top{
+	display: flex;
+	padding-top: 10px;
+}
+
+.main{
+	width:370px;
+	height: 400px;
+	background-color: #000;
+	border-radius: 7px;
+	margin:4px;
+}
+
+.keys{
+	width: 100%;
+	position: absolute;
+	bottom: 15px;
+}
+
+.keys .raw{
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.main p{
+	width:72px;
+	height: 72px;
+	border-radius: 36px;
+	text-align: center;
+	padding-top:5px;
+	box-sizing: border-box;
+	font-family: 'Gamja Flower', cursive;
+	font-size: 60px;
+	cursor: pointer;
+}
+
+.main p:hover{
+	background-color: #cefc75;
+	color: #000;
+	transition: 0.3s;
+}
+
+.top p{
+	margin-left: 5px;
+}
+
+.line {
+	width: 100%;
+	border:2px solid #cefc75;
+	margin-top:10px;
+}
+
+#display {
+	width:260px;
+	height:50px;
+	margin-left: 10px;
+	border-radius: 36px;
+	background-color: rgba(204, 255, 102, .5);
+	text-align: right;
+	padding-top: 20px;
+	padding-right: 13px;
+	font-family: 'Gamja Flower', cursive;
+	font-size: 30px;
+}
+
