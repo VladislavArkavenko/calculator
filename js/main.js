@@ -1,5 +1,5 @@
 let keys = document.getElementsByTagName('p');
-let operators = ['+', '-', 'x', '÷'];
+let operators = ['+', '-', 'x', '÷', '^'];
 let decimal = false;
 
 for(let i = 0; i < keys.length; i++) {
@@ -10,21 +10,28 @@ for(let i = 0; i < keys.length; i++) {
 		let lastChar = displayValue[displayValue.length -1];
 
 		//Clear
-		if(keyValue == 'C') {
+		if (keyValue == 'C') {
 			display.innerHTML = '';
 			decimal = false;
-		}
+		} else if (keyValue == 'S') {
+            display.innerHTML = display.innerHTML.slice(0, -1);
+        }
 
 		//Operator "="
 		else if(keyValue == '='){
 			displayValue = displayValue.replace(/x/g, '*').replace(/÷/g, '/');
+			if( displayValue[0] == "0" && displayValue[1] != ".") {
+                displayValue = displayValue.slice(1)
+			}
 			if (lastChar == '.' || operators.indexOf(lastChar) > -1 ){
 				displayValue = displayValue.replace(/.$/, ' ');
 			}
-
 			let result = eval(displayValue);
 			if(result.toString().indexOf('.') > -1){
-				result = result.toFixed(2);
+                result = result.toFixed(2);
+                if( result[result.length - 1] == "0" ) {
+                	result = result.slice(0, -1)
+                }
 			}
 			display.innerHTML = result;
 			if(result.toString().indexOf('.') > -1){
@@ -32,6 +39,7 @@ for(let i = 0; i < keys.length; i++) {
 			} else {
 				decimal = false;
 			}
+
 		} 
 
 		//Other operators: '+', '-', 'x', '÷'.

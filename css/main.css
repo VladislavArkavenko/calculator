@@ -70,6 +70,7 @@ body {
 }
 
 #display {
+	overflow-x: auto;
 	width:260px;
 	height:50px;
 	margin-left: 10px;
